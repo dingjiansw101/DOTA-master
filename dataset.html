@@ -78,110 +78,78 @@
 					Image Source and Usage License
 				</h2>
 				<p style="text-align:justify;">
-					The images of in DOTA-v1.0 dataset are manily collected from the Google Earth, some
-					are taken by satellite GF-2 and JL-1 of the China Centre for Resources Satellite Data and Application, others are aerial images taken Rotterdam.
+					The DOTA images are collected from the Google Earth, GF-2 and JL-1 satellite provided by the China Centre for Resources Satellite Data and Application, and aerial images provided by CycloMedia B.V.
 				</p>
 				<p style="text-align:justify;">
-					Use of the images from Google Earth must respect the corresponding terms of use:
+					Use of the Google Earth images must respect the
 					<a href="https://www.google.com/permissions/geoguidelines.html">"Google Earth" terms of use</a>.
 				</p>
 				<p style="text-align:justify;">
 					All images and their associated annotations in DOTA
-					<strong style="color:blue">can be used for academic purposes only, but any commercial use is prohibited</strong>.
+					<strong style="color:red">can be used for academic purposes only, but any commercial use is prohibited</strong>.
 				</p>
 				<h2>
 					Object Category
 				</h2>
 				<ul>
 					<li>
-						The object categories in DOTA-v1.0 include: plane, ship, storage tank, baseball diamond, tennis court, basketball court,
+						The object categories in DOTA-v1.0: <i>plane, ship, storage tank, baseball diamond, tennis court, basketball court,
 						ground track field, harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, soccer ball field and swimming
-						pool.
+						pool.</i>
 					</li>
 					<li>
-						The object categories in DOTA-v1.5 include: plane, ship, storage tank, baseball diamond, tennis court, basketball court,
+						The object categories in DOTA-v1.5: <i>plane, ship, storage tank, baseball diamond, tennis court, basketball court,
 						ground track field, harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, soccer ball field, swimming
-						pool and container crane.
+						pool and container crane.</i>
 					</li>
 					<li>
-						The object categories in DOTA-v1.5 include: plane, ship, storage tank, baseball diamond, tennis court, basketball court,
+						The object categories in DOTA-v2.0: <i>plane, ship, storage tank, baseball diamond, tennis court, basketball court,
 						ground track field, harbor, bridge, large vehicle, small vehicle, helicopter, roundabout, soccer ball field, swimming
-						pool, container crane, airport and helipad.
+						pool, container crane, airport and helipad.</i>
 					</li>
 				</ul>
 
-				<!-- <p>
-					Fifteen categories are chosen and annotated in our dataset
-					<ul>
-						<li>plane</li>
-						<li>ship</li>
-						<li>storage tank</li>
-						<li>baseball diamond</li>
-						<li>tennis court</li>
-						<li>basketball court</li>
-						<li>ground track field</li>
-						<li>harbor</li>
-						<li>bridge</li>
-						<li>large vehicle</li>  
-						<li>small vehicle</li>
-						<li>helicopter</li> 
-						<li>roundabout</li> 
-						<li>soccer ball field</li>   
-						<li>basketball court</li>  
-
-					</ul>
-
-				</p> -->
 
 				<h2>
 					Annotation format
 				</h2>
 				<p style="text-align:justify; font-size: 17px">
-					In the dataset, each instance's location is annotated by a quadrilateral bounding boxes, which can be denoted as
-					<strong
-					 style="color:blue"> "x
-						<sub>1</sub>, y
-						<sub>1</sub>, x
-						<sub>2</sub>, y
-						<sub>2</sub>, x
-						<sub>3</sub>, y
-						<sub>3</sub>, x
-						<sub>4</sub>, y
-						<sub>4</sub>" </strong>
-						where (x
-						<sub>i</sub>, y
-						<sub>i</sub>) denotes the positions of the oriented bounding boxes' vertices in the image. The vertices are arranged in
-						a clockwise order. The following is the Visualization of adopted annotation method. The yellow point represents the
-						<strong style="color:blue">starting point</strong>. which refers to: (a) top left corner of a plane, (b) top left corner of a large vehicle diamond,
-						(c) the center of sector-shaped baseball.
+					In the dataset, each object is annotated by an oriented bounding box (OBB), which can be denoted as
+					<strong>
+							(\(x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4\))
+					</strong>
+						, where <strong>(\(x_i, y_i\))</strong> denotes the i-th vertice of OBB. The vertices are arranged in
+						a clockwise order. The following is the visualization of annotations. The yellow point represents the
+						<i>starting point</i>, which means: (a) top-left of a plane, (b) top-left corner of a large vehicle diamond,
+						(c) center of a baseball diamond.
 				</p>
 				<p style="text-align:justify; font-size: 17px">
-					Except the annotation of location, category label is assigned for each instance, and meanwhile a difficult label is provided which indicates whether the instance is difficult to be detected(1
+					Apart from OBB, each instance is also labeled with a <strong>category</strong> and a <strong>difficult</strong> which indicates whether the instance is difficult to be detected(1
 					for difficult, 0 for not difficult). Annotations for an image are saved in a text file with the same file name. At the
-					first line, 'imagesource'(from GoogleEarth, GF-2 or JL-1) is given. At the second line, ’gsd’(ground sample distance,
-					the physical size of one image pixel, in meters) is given.
-					<strong style="color:blue">Note if the 'gsd' is missing, it is annotated to be 'null'.</strong> From third line to last line in annotation text
-					file, annotation for each instance is given. The annotation format is:
+					first line, 'imagesource'(GoogleEarth, GF-2 or JL-1) is given. At the second line, ground sample distance <a href="https://en.wikipedia.org/wiki/Ground_sample_distance">(GSD)</a> in meters is given.
+					If the 'gsd' is missing, it is annotated to be 'null'. From third line to last line, annotation for each instance is given. The following is an example annotation for an image:
 				</p>
 				<pre>
-					<code style="font-size:16px;">
+<code style="font-size:16px;">
 'imagesource':imagesource
 'gsd':gsd
 x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>, x<sub>3</sub>, y<sub>3</sub>, x<sub>4</sub>, y<sub>4</sub>, category, difficult
 x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>, x<sub>3</sub>, y<sub>3</sub>, x<sub>4</sub>, y<sub>4</sub>, category, difficult
-...						
-					</code>
+...
+</code>
 				</pre>
 
-				<div class="container">
-					<!-- <div class="row">
-							<div class="col-md-2 col-md-offset-5">
-								<p>
-									visulizationfsfsdfdsffffff,ffffffffff
-								</p>
-							</div>
-						</div> -->
+<!--<pre>-->
+<!--<code style="font-size:16px;">-->
+<!--'imagesource':imagesource<br>-->
+<!--'gsd':gsd<br>-->
+<!--\(x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4\), category, difficult<br>-->
+<!--\(x_1, y_1, x_2, y_2, x_3, y_3, x_4, y_4\), category, difficult<br>-->
+<!--...-->
+<!--</code>-->
+<!--</pre>-->
 
+				<div class="container">
 
 					<div class="row">
 						<div class="col-xs-4 col-md-4">
@@ -225,23 +193,22 @@ x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>, x<sub>3</sub>, y<sub
 					</div>
 				</div>
 				<br>
-				<!-- <img src="instances-DOTA.jpg" class="img-responsive center-block"  /> -->
 				<h2>
 					Development kit
 				</h2>
 
 				<p>
 					The
-					<a href="https://github.com/CAPTAIN-WHU/DOTA_devkit">Development kit</a> provide the following function
+					<a href="https://github.com/CAPTAIN-WHU/DOTA_devkit">Development kit</a> provides the following function
 					<ul>
 						<li>
-							Load and visulize the data.
+							Loads and visulizes the data.
 						</li>
 						<li>
-							Evaluate the result.
+							Evaluates the result.
 						</li>
 						<li>
-							Split and merge the data.
+							Splits and merges the data.
 						</li>
 					</ul>
 				</p>
@@ -251,8 +218,11 @@ x<sub>1</sub>, y<sub>1</sub>, x<sub>2</sub>, y<sub>2</sub>, x<sub>3</sub>, y<sub
 				</h2>
 
 				<p>
-					The following is the models trained in DOTA.
+					The following are the models trained in DOTA.
 					<ul>
+						<li>
+							<a href="https://github.com/dingjiansw101/AerialDetection"> Object Detection Benchmarks for Aerial Images <strong>(recommend)</strong> </a>
+						</li>
 						<li>
 							<a href="https://github.com/dingjiansw101/RoITransformer_DOTA">RoI Transformer</a>
 						</li>

@@ -77,16 +77,14 @@
 					Overview
 				</h2>
 				<p>
-					We propose two detection tasks. Task1 uses the initial annotation as ground truth.
-					Task2 uses the generated axis-aligned bounding boxes as ground truth.
-					The results from task2 are of great practical value. 
-					We recommond you to test your algorithms by way of Task1. 
+					We introduce two detection tasks. Task1 uses the initial oriented bounding boxes (OBB) as ground truth.
+					Task2 uses the generated HBB as ground truth.
+					Task1 has more practical value and we recommond you to test your algorithms in Task1.
 				</p>
 
 				<h2>Task1 - Detection with oriented bounding boxes <strong>(Recommended)</strong> </h2>
 				<p>
-					The aim of this task is to locate the ground object instances with an oriented bounding box. The
-					oriented bounding box follows the same format with the original annotation
+					The aim of this task is to locate the ground object instances with an OBB.
 				</p>
 
 				<!-- <h3>
@@ -101,8 +99,8 @@
 					Submission Format
 				</h3>
 				<p>
-					You will be asked to submit a zip file containing results for all test images to evaluate your results. The results are stored 
-					in n (n is the numer of categories) files, <strong style="color:blue">"Task1_plane.txt, Task1_storage-tank.txt, ..."</strong>, each file contains all the results for a specific category.  
+					You need to submit a zip file containing results for all test images for evaluation. The results are stored
+					in n (n is the numer of categories) files, <strong style="color:blue">"Task1_plane.txt, Task1_storage-tank.txt, ..."</strong>, each file contains all the detections for a specific category.
 					Each file is in the following format:
 
 				</p>
@@ -114,7 +112,7 @@ imgname score x<sub>1</sub> y<sub>1</sub> x<sub>2</sub> y<sub>2</sub> x<sub>3</s
 					</code>
 				</pre>
 
-				<a href="submissionformat/example_task1.zip">An example submission of task1 for DOTA-v1.0</a>
+				<a href="submissionformat/example_task1.zip", style="font-size: 16px">An example submission of task1 for DOTA-v1.0</a>
 
 				<h3>
 					Evaluation Protocol
@@ -132,7 +130,7 @@ imgname score x<sub>1</sub> y<sub>1</sub> x<sub>2</sub> y<sub>2</sub> x<sub>3</s
 					Detecting object with horizontal bounding boxes is usual in many previous contests for object
 					detection. The aim of this task is to accurately localize the instance in terms of horizontal bounding
 					box with (xmin, ymin, xmax, ymax) format. In the task, the ground truths for training and testing are generated
-					by calculating the axis-aligned bounding boxes over original annotated bounding boxes.
+					by calculating the horizontal bounding boxes over original annotated bounding boxes.
 				</p>
 				<p>
 
@@ -150,7 +148,7 @@ imgname score x<sub>1</sub> y<sub>1</sub> x<sub>2</sub> y<sub>2</sub> x<sub>3</s
 					Submission Format
 				</h3>
 				<p>
-					You will be asked to submit a zip file containing results for all test images to evaluate your results. The results are stored 
+					You need to submit a zip file containing results for all test images for evaluation. The results are stored
 					in n (n is the numer of categories) files, <strong style="color:blue">"Task2_plane.txt, Task2_storage-tank.txt, ..."</strong>, each file contains all the results for a specific category.  
 				</p>
 				<pre>
@@ -167,7 +165,7 @@ imgname score xmin ymin xmax ymax
 				</h3>
 				<p>
 					The evaluation protocol for horizontal bounding boxes follows the PASCAL VOC benchmark,
-					which uses mean Average Precision(<strong>mAP</strong>) as the primary metric.
+					which uses mean Average Precision(<strong>mAP</strong>) as metric.
 				</p>
 
 

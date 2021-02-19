@@ -92,7 +92,7 @@
 
 				<div class="row">
 					<div class="span12">
-						<strong style="color:red">Note! The table can only be shown on chrome now.</strong>
+						<strong style="color:red">Note! The table can only be shown on chrome currently.</strong>
 						<h1 align="center">DOTA-v1.0 Leaderboard</h1>
 						<h2>Task1 - Oriented Object Detection</h2>
 						<table id="Task1" class="display" style="width:100%">
@@ -501,7 +501,7 @@
 		// DOTA-v1.5 learderboard
 		$(document).ready(function () {
 			var table2 = $('#Task1_15').DataTable({
-				"ajax": "leaderboards/learderboard2.txt",
+				"ajax": "leaderboards/learderboard1_dota15.txt",
 				"columns": [
 					{
 						"className": 'details-control',
@@ -553,7 +553,7 @@
 
 		$(document).ready(function () {
 			var table2 = $('#Task2_15').DataTable({
-				"ajax": "leaderboards/learderboard2.txt",
+				"ajax": "leaderboards/learderboard2_dota15.txt",
 				"columns": [
 					{
 						"className": 'details-control',
@@ -605,109 +605,109 @@
 
 
 		// DOTA-v2.0 learderboard
-		$(document).ready(function () {
-			var table2 = $('#Task1_20').DataTable({
-				"ajax": "leaderboards/learderboard2.txt",
-				"columns": [
-					{
-						"className": 'details-control',
-						"orderable": false,
-						"data": null,
-						"defaultContent": ''
-					},
-					{ "data": "TeamNames" },
-					// { "data": "Team Member" },
-					// { "data": "Institute" },
-					{ "data": "mAP" },
-					{ "data": "Plane" },
-					{ "data": "BD" },
-					{ "data": "Bridge" },
-					{ "data": "GTF" },
-					{ "data": "SV" },
-					{ "data": "LV" },
-					{ "data": "Ship" },
-					{ "data": "TC" },
-					{ "data": "BC" },
-					{ "data": "ST" },
-					{ "data": "SBF" },
-					{ "data": "RA" },
-					{ "data": "Harbor" },
-					{ "data": "SP" },
-					{ "data": "HC" },
-					{ "data": "date" },
-				],
-				"order": [[2, 'dsc']]
-			});
-
-			// Add event listener for opening and closing details
-			$('#Task1_20 tbody').on('click', 'td.details-control', function () {
-				var tr = $(this).closest('tr');
-				var row = table2.row(tr);
-
-				if (row.child.isShown()) {
-					// This row is already open - close it
-					row.child.hide();
-					tr.removeClass('shown');
-				}
-				else {
-					// Open this row
-					row.child(format(row.data())).show();
-					tr.addClass('shown');
-				}
-			});
-		});
-
-		$(document).ready(function () {
-			var table2 = $('#Task2_20').DataTable({
-				"ajax": "leaderboards/learderboard2.txt",
-				"columns": [
-					{
-						"className": 'details-control',
-						"orderable": false,
-						"data": null,
-						"defaultContent": ''
-					},
-					{ "data": "TeamNames" },
-					// { "data": "Team Member" },
-					// { "data": "Institute" },
-					{ "data": "mAP" },
-					{ "data": "Plane" },
-					{ "data": "BD" },
-					{ "data": "Bridge" },
-					{ "data": "GTF" },
-					{ "data": "SV" },
-					{ "data": "LV" },
-					{ "data": "Ship" },
-					{ "data": "TC" },
-					{ "data": "BC" },
-					{ "data": "ST" },
-					{ "data": "SBF" },
-					{ "data": "RA" },
-					{ "data": "Harbor" },
-					{ "data": "SP" },
-					{ "data": "HC" },
-					{ "data": "date" },
-				],
-				"order": [[2, 'dsc']]
-			});
-
-			// Add event listener for opening and closing details
-			$('#Task2_20 tbody').on('click', 'td.details-control', function () {
-				var tr = $(this).closest('tr');
-				var row = table2.row(tr);
-
-				if (row.child.isShown()) {
-					// This row is already open - close it
-					row.child.hide();
-					tr.removeClass('shown');
-				}
-				else {
-					// Open this row
-					row.child(format(row.data())).show();
-					tr.addClass('shown');
-				}
-			});
-		});
+		// $(document).ready(function () {
+		// 	var table2 = $('#Task1_20').DataTable({
+		// 		"ajax": "leaderboards/learderboard2.txt",
+		// 		"columns": [
+		// 			{
+		// 				"className": 'details-control',
+		// 				"orderable": false,
+		// 				"data": null,
+		// 				"defaultContent": ''
+		// 			},
+		// 			{ "data": "TeamNames" },
+		// 			// { "data": "Team Member" },
+		// 			// { "data": "Institute" },
+		// 			{ "data": "mAP" },
+		// 			{ "data": "Plane" },
+		// 			{ "data": "BD" },
+		// 			{ "data": "Bridge" },
+		// 			{ "data": "GTF" },
+		// 			{ "data": "SV" },
+		// 			{ "data": "LV" },
+		// 			{ "data": "Ship" },
+		// 			{ "data": "TC" },
+		// 			{ "data": "BC" },
+		// 			{ "data": "ST" },
+		// 			{ "data": "SBF" },
+		// 			{ "data": "RA" },
+		// 			{ "data": "Harbor" },
+		// 			{ "data": "SP" },
+		// 			{ "data": "HC" },
+		// 			{ "data": "date" },
+		// 		],
+		// 		"order": [[2, 'dsc']]
+		// 	});
+		//
+		// 	// Add event listener for opening and closing details
+		// 	$('#Task1_20 tbody').on('click', 'td.details-control', function () {
+		// 		var tr = $(this).closest('tr');
+		// 		var row = table2.row(tr);
+		//
+		// 		if (row.child.isShown()) {
+		// 			// This row is already open - close it
+		// 			row.child.hide();
+		// 			tr.removeClass('shown');
+		// 		}
+		// 		else {
+		// 			// Open this row
+		// 			row.child(format(row.data())).show();
+		// 			tr.addClass('shown');
+		// 		}
+		// 	});
+		// });
+		//
+		// $(document).ready(function () {
+		// 	var table2 = $('#Task2_20').DataTable({
+		// 		"ajax": "leaderboards/learderboard2.txt",
+		// 		"columns": [
+		// 			{
+		// 				"className": 'details-control',
+		// 				"orderable": false,
+		// 				"data": null,
+		// 				"defaultContent": ''
+		// 			},
+		// 			{ "data": "TeamNames" },
+		// 			// { "data": "Team Member" },
+		// 			// { "data": "Institute" },
+		// 			{ "data": "mAP" },
+		// 			{ "data": "Plane" },
+		// 			{ "data": "BD" },
+		// 			{ "data": "Bridge" },
+		// 			{ "data": "GTF" },
+		// 			{ "data": "SV" },
+		// 			{ "data": "LV" },
+		// 			{ "data": "Ship" },
+		// 			{ "data": "TC" },
+		// 			{ "data": "BC" },
+		// 			{ "data": "ST" },
+		// 			{ "data": "SBF" },
+		// 			{ "data": "RA" },
+		// 			{ "data": "Harbor" },
+		// 			{ "data": "SP" },
+		// 			{ "data": "HC" },
+		// 			{ "data": "date" },
+		// 		],
+		// 		"order": [[2, 'dsc']]
+		// 	});
+		//
+		// 	// Add event listener for opening and closing details
+		// 	$('#Task2_20 tbody').on('click', 'td.details-control', function () {
+		// 		var tr = $(this).closest('tr');
+		// 		var row = table2.row(tr);
+		//
+		// 		if (row.child.isShown()) {
+		// 			// This row is already open - close it
+		// 			row.child.hide();
+		// 			tr.removeClass('shown');
+		// 		}
+		// 		else {
+		// 			// Open this row
+		// 			row.child(format(row.data())).show();
+		// 			tr.addClass('shown');
+		// 		}
+		// 	});
+		// });
 
 	</script>
 
