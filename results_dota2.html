@@ -104,9 +104,9 @@
 					<div class="span12">
 						<strong style="color:red">Note! The table can only be shown on chrome currently.</strong>
 
-						<h1 align="center">DOTA-v1.0 Leaderboard</h1>
+						<h1 align="center">DOTA-v2.0 Learderboard</h1>
 						<h2>Task1 - Oriented Object Detection</h2>
-						<table id="Task1" class="display" style="width:100%">
+						<table id="Task1_20" class="display" style="width:100%">
 							<thead>
 								<tr>
 									<th></th>
@@ -145,7 +145,7 @@
 						</table>
 
 						<h2>Task2 - Horizontal Object Detection</h2>
-						<table id="Task2" class="display" style="width:100%">
+						<table id="Task2_20" class="display" style="width:100%">
 							<thead>
 								<tr>
 									<th></th>
@@ -206,6 +206,8 @@
 <!--			<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=Vs7kEm-F-yc_I1yR89KMrjHwPuM3LWsU-RKxnqEQh3s&cl=ffffff&w=a"></script>-->
 <!--		</p>-->
 <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=Vs7kEm-F-yc_I1yR89KMrjHwPuM3LWsU-RKxnqEQh3s'></script>
+<!--<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=a&t=tt&d=Vs7kEm-F-yc_I1yR89KMrjHwPuM3LWsU-RKxnqEQh3s'></script>-->
+<!--<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=Vs7kEm-F-yc_I1yR89KMrjHwPuM3LWsU-RKxnqEQh3s"></script>		<br>-->
 	</div>
 
 
@@ -237,111 +239,111 @@
 			'</table>';
 		}
 
-		// dota 1 leaderboard
-		$(document).ready(function () {
-			var table = $('#Task1').DataTable({
-				"ajax": "leaderboards/learderboard1.txt",
-				"columns": [
-					{
-						"className": 'details-control',
-						"orderable": false,
-						"data": null,
-						"defaultContent": ''
-					},
-					{ "data": "TeamNames" },
-					// { "data": "Team Member" },
-					// { "data": "Institute" },
-					{ "data": "mAP" },
-					{ "data": "Plane" },
-					{ "data": "BD" },
-					{ "data": "Bridge" },
-					{ "data": "GTF" },
-					{ "data": "SV" },
-					{ "data": "LV" },
-					{ "data": "Ship" },
-					{ "data": "TC" },
-					{ "data": "BC" },
-					{ "data": "ST" },
-					{ "data": "SBF" },
-					{ "data": "RA" },
-					{ "data": "Harbor" },
-					{ "data": "SP" },
-					{ "data": "HC" },
-					{ "data": "date" }
-				],
-				"order": [[2, 'dsc']]
-			});
 
-			// Add event listener for opening and closing details
-			$('#Task1 tbody').on('click', 'td.details-control', function () {
-				var tr = $(this).closest('tr');
-				var row = table.row(tr);
-
-				if (row.child.isShown()) {
-					// This row is already open - close it
-					row.child.hide();
-					tr.removeClass('shown');
-				}
-				else {
-					// Open this row
-					row.child(format(row.data())).show();
-					tr.addClass('shown');
-				}
-			});
-		});
-
-
-		$(document).ready(function () {
-			var table2 = $('#Task2').DataTable({
-				"ajax": "leaderboards/learderboard2.txt",
-				"columns": [
-					{
-						"className": 'details-control',
-						"orderable": false,
-						"data": null,
-						"defaultContent": ''
-					},
-					{ "data": "TeamNames" },
-					// { "data": "Team Member" },
-					// { "data": "Institute" },
-					{ "data": "mAP" },
-					{ "data": "Plane" },
-					{ "data": "BD" },
-					{ "data": "Bridge" },
-					{ "data": "GTF" },
-					{ "data": "SV" },
-					{ "data": "LV" },
-					{ "data": "Ship" },
-					{ "data": "TC" },
-					{ "data": "BC" },
-					{ "data": "ST" },
-					{ "data": "SBF" },
-					{ "data": "RA" },
-					{ "data": "Harbor" },
-					{ "data": "SP" },
-					{ "data": "HC" },
-					{ "data": "date" },
-				],
-				"order": [[2, 'dsc']]
-			});
-
-			// Add event listener for opening and closing details
-			$('#Task2 tbody').on('click', 'td.details-control', function () {
-				var tr = $(this).closest('tr');
-				var row = table2.row(tr);
-
-				if (row.child.isShown()) {
-					// This row is already open - close it
-					row.child.hide();
-					tr.removeClass('shown');
-				}
-				else {
-					// Open this row
-					row.child(format(row.data())).show();
-					tr.addClass('shown');
-				}
-			});
-		});
+		// DOTA-v2.0 learderboard
+		// $(document).ready(function () {
+		// 	var table2 = $('#Task1_20').DataTable({
+		// 		"ajax": "leaderboards/learderboard2.txt",
+		// 		"columns": [
+		// 			{
+		// 				"className": 'details-control',
+		// 				"orderable": false,
+		// 				"data": null,
+		// 				"defaultContent": ''
+		// 			},
+		// 			{ "data": "TeamNames" },
+		// 			// { "data": "Team Member" },
+		// 			// { "data": "Institute" },
+		// 			{ "data": "mAP" },
+		// 			{ "data": "Plane" },
+		// 			{ "data": "BD" },
+		// 			{ "data": "Bridge" },
+		// 			{ "data": "GTF" },
+		// 			{ "data": "SV" },
+		// 			{ "data": "LV" },
+		// 			{ "data": "Ship" },
+		// 			{ "data": "TC" },
+		// 			{ "data": "BC" },
+		// 			{ "data": "ST" },
+		// 			{ "data": "SBF" },
+		// 			{ "data": "RA" },
+		// 			{ "data": "Harbor" },
+		// 			{ "data": "SP" },
+		// 			{ "data": "HC" },
+		// 			{ "data": "date" },
+		// 		],
+		// 		"order": [[2, 'dsc']]
+		// 	});
+		//
+		// 	// Add event listener for opening and closing details
+		// 	$('#Task1_20 tbody').on('click', 'td.details-control', function () {
+		// 		var tr = $(this).closest('tr');
+		// 		var row = table2.row(tr);
+		//
+		// 		if (row.child.isShown()) {
+		// 			// This row is already open - close it
+		// 			row.child.hide();
+		// 			tr.removeClass('shown');
+		// 		}
+		// 		else {
+		// 			// Open this row
+		// 			row.child(format(row.data())).show();
+		// 			tr.addClass('shown');
+		// 		}
+		// 	});
+		// });
+		//
+		// $(document).ready(function () {
+		// 	var table2 = $('#Task2_20').DataTable({
+		// 		"ajax": "leaderboards/learderboard2.txt",
+		// 		"columns": [
+		// 			{
+		// 				"className": 'details-control',
+		// 				"orderable": false,
+		// 				"data": null,
+		// 				"defaultContent": ''
+		// 			},
+		// 			{ "data": "TeamNames" },
+		// 			// { "data": "Team Member" },
+		// 			// { "data": "Institute" },
+		// 			{ "data": "mAP" },
+		// 			{ "data": "Plane" },
+		// 			{ "data": "BD" },
+		// 			{ "data": "Bridge" },
+		// 			{ "data": "GTF" },
+		// 			{ "data": "SV" },
+		// 			{ "data": "LV" },
+		// 			{ "data": "Ship" },
+		// 			{ "data": "TC" },
+		// 			{ "data": "BC" },
+		// 			{ "data": "ST" },
+		// 			{ "data": "SBF" },
+		// 			{ "data": "RA" },
+		// 			{ "data": "Harbor" },
+		// 			{ "data": "SP" },
+		// 			{ "data": "HC" },
+		// 			{ "data": "date" },
+		// 		],
+		// 		"order": [[2, 'dsc']]
+		// 	});
+		//
+		// 	// Add event listener for opening and closing details
+		// 	$('#Task2_20 tbody').on('click', 'td.details-control', function () {
+		// 		var tr = $(this).closest('tr');
+		// 		var row = table2.row(tr);
+		//
+		// 		if (row.child.isShown()) {
+		// 			// This row is already open - close it
+		// 			row.child.hide();
+		// 			tr.removeClass('shown');
+		// 		}
+		// 		else {
+		// 			// Open this row
+		// 			row.child(format(row.data())).show();
+		// 			tr.addClass('shown');
+		// 		}
+		// 	});
+		// });
 
 	</script>
 

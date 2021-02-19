@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js">
 	</script>
-	<!-- <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+	 <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
@@ -65,8 +65,15 @@
 							<li>
 								<a href="evaluation.html">Evaluation</a>
 							</li>
-							<li>
-								<a href="results.html">Results</a>
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+									Results <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="results.html"> <i class="glyphicon glyphicon-th-list"></i>  DOTA-v1.0</a></li>
+									<li><a href="results_dota15.html"> <i class="glyphicon glyphicon-th-list"></i>  DOTA-v1.5</a></li>
+									<li><a href="results_dota2.html"> <i class="glyphicon glyphicon-th-list"></i>  DOTA-v2.0</a></li>
+								</ul>
 							</li>
 							<br />
 						</ul>
